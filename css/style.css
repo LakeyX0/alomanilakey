@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(31, 30, 30);
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 0rem;
+}
+
+.social-icons ul {
+    display: flex;
+    gap: 1rem; /* Jarak antar ikon */
+}
+
+.social-icons ul li {
+    list-style-type: none;
+}
+
+.social-icons ul li a {
+    color: #a6a8b8;
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.social-icons ul li a:hover {
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeInUp 0.8s;
+    max-width: 800px;
+    width: 100%;
+}
+
+.container .profile-img {
+    width: 11rem;
+    height: 11rem;
+    border: 0.5rem solid darkgray;
+    border-radius: 50%;
+    box-shadow: transparent;
+    object-fit: cover;
+    margin-top: -16rem;
+    cursor: url("../music-pointer.png"), pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.6s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+    border-color: whitesmoke;
+}
+
+.profile-img.active {
+    border-color: lightgreen;
+    box-shadow: 
+    0 0 20px 10px rgba(0, 0, 0, 0.5),  /* Shadow hitam */
+    0 0 30px 20px rgba(232, 71, 79, 0.6);  /* Shadow pink */
+}
+
+.container .name {
+    font-family: "Bradley Hand", cursive;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: whitesmoke;
+    font-size: 2.5rem;
+    text-shadow: 0.3rem 0.3rem 0.2rem lightslategray;
+    margin-top: 1rem;
+}
+
+.container .desc {
+    width: 80%;
+    font-size: 1.2rem;
+    color: darkgray;
+    margin-top: 0rem;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 5s steps(44) 1s 1 normal both, cursorLine 4s linear 4s forwards;
+}
+
+
+@media only screen and (max-width: 630px) {
+    header nav {
+        display: flex;
+        flex-direction: column;
+    }
+    header nav .header_logo {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    header nav .icon-header ul {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container .profile-img {
+        width: 10rem;
+        height: 10rem;
+    }
+    .container .name {
+        font-size: 2rem;
+    }
+    .container .desc {
+        font-size: 1rem;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container .profile-img {
+        width: 8rem;
+        height: 8rem;
+    }
+    .container .name {
+        font-size: 1.5rem;
+    }
+    .container .desc {
+        font-size: 0.9rem;
+        width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes cursorLine {
+    from { border-color: rgba(255, 255, 255, 1); }
+    to { border-color: transparent; }
+}
+
+@keyframes typewriter {
+    0% { width: 0; opacity: 0; }
+    99% { opacity: 1; }
+    100% { width: 23.5em; opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translate3d(0, 150px, 0); }
+    to { transform: translate3d(0, 0, 0); opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translate3d(0, -150px, 0)
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
+}
